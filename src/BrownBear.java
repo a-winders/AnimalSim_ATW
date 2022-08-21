@@ -4,12 +4,15 @@ import java.util.Arrays;
 /*
  * This class represents an Animal subclass called BrownBear
  */
-public class BrownBear extends Animal implements Walkable, Swimmable {
+public class BrownBear <Location> extends Animal implements Walkable, Swimmable {
 	
 	/*
 	 * Instance field
 	 */
-	private String subSpecies = ("Alaskan, Asiatic, European, Grizzly, Kodiak, Siberian");
+	private String subSpecies;
+
+	
+	
 	// end instance field
 	
 	/*
@@ -59,9 +62,8 @@ public class BrownBear extends Animal implements Walkable, Swimmable {
 	 */
 	@Override
 	public void walk(int direction) {
-		
 		/*
-		 * Captures current location
+		 * Grabs current location
 		 */
 		int currentX = this.location.getxCoord();
 		int currentY = this.location.getyCoord();
@@ -77,7 +79,8 @@ public class BrownBear extends Animal implements Walkable, Swimmable {
 		 */
 		this.location.setxCoord(newX);
 		this.location.setyCoord(newY);
-		// TODO Auto-generated method stub
+		
+		direction = Math.abs(currentX-newX+3) + Math.abs(currentY-newY+3);
 		
 	}	// end walk
 
@@ -106,6 +109,7 @@ public class BrownBear extends Animal implements Walkable, Swimmable {
 		
 		// TODO Auto-generated method stub
 		
+		direction = Math.abs(currentX-newX+2) + Math.abs(currentY-newY+2);
 	}	// end swim
 
 	

@@ -1,4 +1,7 @@
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Random;
 
 /**
  * This class encapsulates a point on a simulation map.
@@ -17,8 +20,8 @@ public class Location {
 	 * Places the xCoord & yCoord into a consistent state by defaulting them to 0.
 	 */
 	public Location () {
-		xCoord = 0;
-		yCoord = 0;
+		this.xCoord = 0;
+		this.yCoord = 0;
 	}	// end empty-argument constructor
 	
 	/*
@@ -35,7 +38,6 @@ public class Location {
 	 * Returns the x-axis coordinate.
 	 */
 	public int getxCoord() {
-		
 		return xCoord;
 		
 	}	// end getxCoord
@@ -49,7 +51,6 @@ public class Location {
 			this.xCoord = xCoord;
 		else
 			this.xCoord = 0;
-		System.out.println(xCoord);
 	}	// end setxCoord
 
 	/*
@@ -63,8 +64,10 @@ public class Location {
 	 * Sets the y-axis coordinate.
 	 */
 	public void setyCoord(int yCoord) {
-		this.yCoord = yCoord;
-		System.out.println(yCoord);
+		if (yCoord > 0)	
+			this.yCoord = yCoord;
+		else
+			this.yCoord = 0;
 	}	// end setyCoord
 
 	/*
@@ -77,20 +80,23 @@ public class Location {
 	}	// end update
 	
 	
-	/*
+	/* 
 	 * Prints x & y coordinates to console.
 	 */
 	@Override
 	public String toString() {
-		return "Location [xCoord=" + xCoord + ", yCoord=" + yCoord + "]";
+		return "Location [xCoord = " + xCoord + ", yCoord = " + yCoord + "]";
 	}	// end toString
 
 	/*
 	 * Returns an array of x-coordinate & y-coordinate, in that order.
 	 */
-	public int[] getCoordinates() {
-	
+	public ArrayList getCoordinates () {
+		ArrayList coordinates = new ArrayList();
+		coordinates.add(xCoord);
+		coordinates.add(yCoord);
 		return coordinates;
+		
 	}	// end getCoordinates
-	
+
 }	// end class

@@ -7,7 +7,6 @@ public class Application {
 	public static void main(String[] args) {
 		
 		/*
-		* Tests all Location class methods & objects.
 		*********************************************
 
 	      			Location Tests
@@ -16,54 +15,48 @@ public class Application {
 		*/
 		
 		/*
-		 * tests empty argument constructor
+		 * Creates Location object to test all class methods & objects.
 		 */
-//		Location emptyArg1 = new Location();	// empty argument constructor
-//		System.out.println(emptyArg1);
+			Location location = new Location();
 		/*
-		 * tests preferred constructor
+		 * Tests empty-argument constructor
 		 */
-//		Location prefArg1 = new Location(2,3);	// preferred constructor
-//		System.out.println(prefArg1);
+			System.out.println(location);
 		/*
-		 * tests getxCoord method
+		 * Tests preferred argument constructor
 		 */
-//		Location getterX1 = new Location();	// getxCoord
-//		System.out.println(getterX1.getxCoord());
+			Location loc = new Location(20,20);			// all moveable objects' starting point
+			Location newLoc = new Location(45,67);	
+		/*
+		 * Tests getxCoord method
+		 */
+			System.out.println(location.getxCoord());
+		/*
+		 * Tests getyCoord method
+		 */
+			System.out.println(location.getyCoord());
+		/*
+		 * Tests setxCoord method
+		 */
+			location.setxCoord(3);
+		/*
+		 * Tests setyCoord method
+		 */
+			location.setyCoord(11);
+		/*
+		 * Tests update method
+		 */
+			location.update(1, 2);
+		/*
+		 * Tests toString method	
+		 */
+			System.out.println(location.toString());
+		/*
+		 * Tests getCoordinates method and returns an array of x & y coordinates in the order of (x,y)
+		 */
+			System.out.println(location.getCoordinates());
 		
-		/*
-		 * tests setxCoord method
-		 */
-		Location setterX1 = new Location();	//setxCoord
-		setterX1.setxCoord(3);
-		
-		/*
-		 * tests getyCoord method
-		 */
-//		Location getterY1 = new Location();	// get yCoord
-//		System.out.println(getterY1.getyCoord());
-		
-		/*
-		 * tests setyCoord method
-		 */
-//		Location setterY1 = new Location();	// set yCoord
-//		setterY1.setyCoord(11);
-		
-		/* COME BACK TO THIS
-		 * test update method
-		 */
-//		Location testUpdate = new Location();	// update method
-//		System.out.println(testUpdate.update());
-		
-		/*
-		 * tests getCoordinates method
-		 */
-//		Location getCoords = new Location();
-//		System.out.println(getCoords.getCoordinates());
-		
-		/*
-		 * "Tests" all Animal class objects & methods
-		/*
+		/* 
 		*********************************************
 
 	    				Animal Tests
@@ -75,7 +68,6 @@ public class Application {
 		
 		
 		/*
-		 * Tests all Goldfinch class objects & methods.
 		*********************************************
 
       					Goldfinch Tests
@@ -84,38 +76,39 @@ public class Application {
 		*/
 		
 		/*
+		 * Creates Goldfinch object to test all class methods & objects.
+		 */
+			Goldfinch goldfinch = new Goldfinch ();
+		/*
 		 * tests empty argument constructor
 		 */
-//		Goldfinch emptyArg2 = new Goldfinch ();
-//		System.out.println(emptyArg2);
-		
-		/* COME BACK TO THIS
+			System.out.println(goldfinch);
+		/* COMMENTED OUT B/C I COULDN'T GET IT TO RUN PROPERLY
 		 * tests preferred argument constructor
 		 */
-//		Goldfinch prefArg2 = new Goldfinch (int simID, Location l, wingSpan ws);
-//		System.out.println(prefArg2);
-		
+//			Goldfinch gf = new Goldfinch(3, l, 3.0); 
+//			System.out.println(goldfinch);
 		/*
 		 * tests getWingSpan
 		 */
-//		Goldfinch getWing = new Goldfinch();
-//		System.out.println(getWing.getWingSpan());
-		
+			System.out.println(goldfinch.getWingSpan());
 		/*
 		 * tests setWingSpan
 		 */
-//		Goldfinch setWing = new Goldfinch();
-//		setWing.setWingSpan(12.0);
-		
+			goldfinch.setWingSpan(12.0);
 		/*
 		 * tests toString
 		 */
-//		Goldfinch info1 = new Goldfinch ();
-//		System.out.println(info1.toString());
-		
+			System.out.println(goldfinch.toString());
 		/*
-		 * Tests all BrownBear methods & objects.
+		 * tests walk interface
 		 */
+			System.out.println(goldfinch.eat());
+		/*
+		 * tests fly interface	
+		 */
+			
+		
 		/*
 		*********************************************
 
@@ -125,51 +118,63 @@ public class Application {
 		*/
 		
 		/*
+		 * Creates BrownBear object to test all class methods & objects	
+		 */
+			BrownBear bb = new BrownBear();	
+		/*
 		 * Tests empty-argument constructor
 		 */
-		BrownBear emptyArg3 = new BrownBear();
-		System.out.println(emptyArg3);
+			System.out.println(bb);
 		
-		/* COME BACK TO THIS
+		/* COMMENTED OUT B/C I COULDN'T GET IT TO RUN PROPERLY
 		 * Tests preferred constructor
 		 */
-//		BrownBear prefArg3 = new BrownBear(1, l, "Brown");
-//		System.out.println(prefArg3);
-		
+//			BrownBear bbPref = new BrownBear(1, l, "Brown");
+//			System.out.println(bbPref);
 		/*
 		 * Tests getSubSpecies
 		 */
-		BrownBear getSub = new BrownBear();
-		getSub.getSubSpecies();
-		
+			bb.getSubSpecies();
 		/*
 		 * Tests setSubSpecies
 		 */
-		BrownBear setSub = new BrownBear();
-		setSub.setSubSpecies("Brown");
-		
+			bb.setSubSpecies("Brown");	
 		/*
 		 * Tests toString
 		 */
-		BrownBear info2 = new BrownBear();
-		System.out.println(info2.toString());
-		
-	/*
-		BrownBear walk = new BrownBear();
-		System.out.println(walk.walk());
-	*/	
+			System.out.println(bb.toString());	
+		/*
+		 * Tests walk interface	
+		 */
 		
 		/*
-		 * Tests all Generics methods & objects 
+		 * Tests swim interface	
+		 */
+		
+		
+		/*
 		*********************************************
 
 					Generics Tests
 
 		*********************************************
 		*/
-		
-		ArrayList <Animal> animalList = new ArrayList<>();
-		
+			
+		/*
+		 * Instantiates an ArrayList object that can hold any type of Animal
+		 */
+			ArrayList <Animal> animalList = new ArrayList<>();
+		/*COMMENTED OUT B/C I COULDN'T GET IT TO RUN PROPERLY
+		 * Adds different Animal subclasses to the ArrayList
+		 */
+//			animalList.add(new Animal(BrownBear()));
+//			animalList.add(new Animal);
+		/*COMMENTED OUT B/C I COULDN'T GET IT TO RUN PROPERLY
+		 * Iterates through the ArrayList object	
+		 */
+//			for (Animal car : cars) {
+//				animalList.printDetails();
+//			}
 	}	// end main
 
 }	// end class

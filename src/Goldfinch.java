@@ -1,7 +1,7 @@
 /*
  * This class represents an Animal subclass named Goldfinch
  */
-public class Goldfinch<wingSpan> extends Animal implements Flyable, Walkable {
+public class Goldfinch<wingSpan>  extends Animal implements Flyable, Walkable {
 	
 	/*
 	 * Instance field
@@ -13,7 +13,7 @@ public class Goldfinch<wingSpan> extends Animal implements Flyable, Walkable {
 	 */
 	public Goldfinch() {
 		super();
-		wingSpan = 9.0;
+		this.wingSpan = 9.0;
 	}	// end empty argument constructor
 	
 	/*
@@ -23,7 +23,7 @@ public class Goldfinch<wingSpan> extends Animal implements Flyable, Walkable {
 		super();
 		this.simID = simID;
 		this.location = l;
-	//	this.wingSpan = ws;
+		this.wingSpan = (double) ws;
 	}	// end preferred constructor
 	
 	/*
@@ -55,6 +55,7 @@ public class Goldfinch<wingSpan> extends Animal implements Flyable, Walkable {
 	 */
 	@Override
 	public void walk(int direction) {
+		direction = 1;
 		/*
 		 * Captures current location
 		 */
@@ -72,8 +73,11 @@ public class Goldfinch<wingSpan> extends Animal implements Flyable, Walkable {
 		 */
 		this.location.setxCoord(newX);
 		this.location.setyCoord(newY);
-		// TODO Auto-generated method stub
 		
+		/*
+		 * Sets direction as (x-coordinate + 1 units) & (y-coordinate + 1 units)
+		 */
+		direction = Math.abs(currentX-newX+1) + Math.abs(currentY-newY+1);
 	}	// end walk
 
 	/*
@@ -100,6 +104,10 @@ public class Goldfinch<wingSpan> extends Animal implements Flyable, Walkable {
 		this.location.setyCoord(newY);
 		// TODO Auto-generated method stub
 		
+		/*
+		 * Sets direction as (x-coordinate + 2 units) & (y-coordinate + 2 units) using Euclidian distance
+		 */
+		Math.sqrt(Math.pow(currentX-newX, 2) + Math.pow(currentY-newY, 2));
 	}	// end fly
 	
 	

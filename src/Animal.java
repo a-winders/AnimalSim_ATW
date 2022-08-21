@@ -1,8 +1,10 @@
+import java.lang.Math;
+
 /**
  * Abstract class encapsulates a generic animal that can be sub-classed by other classes.
  * @author Adam Winders
  */
-public abstract class Animal {
+public abstract class Animal   {
 	
 	/*
 	 * instance field
@@ -17,10 +19,11 @@ public abstract class Animal {
 	 * This constructor defaults the instance field variables if no arguments are passed in.
 	 */
 	public Animal() {
-		simID = 0;
-//		Location location = {[0,0]};
-		full = false;
-		rested = true;
+		super();
+		this.simID = 0;
+		this.location = new Location(0,0);
+		this.full = false;
+		this.rested = true;
 	}	// end empty-argument constructor
 	
 	/*
@@ -91,17 +94,39 @@ public abstract class Animal {
 	}	// end setRested
 	
 	/*
-	 * Returns eat
+	 * Returns false and sets full to false if the randomly generated number is less than or equal to 0.5.
+	 * Returns true otherwise.
 	 */
 	public boolean eat() {
-		return true;
+		int min = 0;
+		int max = 1;
+		double number = Math.random()*(max-min+1)+min;
+		if (number <= .5) {
+			this.setFull(false);
+			return false;
+		}
+		else {
+			full = true;
+			return true;
+		}
 	}	// end eat
 	
 	/*
-	 * Returns sleep
+	 * Returns false and sets rested to false if the randomly generated number is less than or equal to 0.5.
+	 * Returns true otherwise.
 	 */
 	public boolean sleep() {
-		return true;
+		int min = 0;
+		int max = 1;
+		double number = Math.random()*(max-min+1)+min;
+		if (number <= .5) {
+			this.setRested(false);
+			return false;
+		}
+		else {
+			rested = true;
+			return true;
+		}	
 	}	// end sleep
 	
 }	// end class
